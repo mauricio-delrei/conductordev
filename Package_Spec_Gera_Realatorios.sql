@@ -7,7 +7,7 @@
 |                arquivo a partir da Tabela de Transacoes.							   |
 |				 Geracao de um arquivo com as Transacoes de acordo com a data informada|  
 |                como   parametro na execucao da aplicacao;	                           |
-|Script		   : Criacao da Package Specificaton.					 				   |										                   
+|Script		   : Criacao da Package Specification.					 				   |										                   
 ***************************************************************************************|
 */
 CREATE OR REPLACE PACKAGE PKG_GERA_RELATORIO IS
