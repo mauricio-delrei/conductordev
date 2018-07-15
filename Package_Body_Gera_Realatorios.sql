@@ -1,13 +1,13 @@
 /*
 ***************************************************************************************|																				 	
-|Analista      : Mauricio A. Del Rei												   |
-|Data          : 14/07/2018															   |
-|Versão		   : 1.0.0																   |
+|Analista      : Mauricio A. Del Rei						       |
+|Data          : 14/07/2018							       |
+|Versão		   : 1.0.0							       |
 |Objetivo      : Desenvolver uma aplicacao que acesse o banco de dados e gere um       | 
-|                arquivo a partir da Tabela de Transacoes.							   |
-|				 Geracao de um arquivo com as Transacoes de acordo com a data informada|  
-|                como   parametro na execucao da aplicacao;	                           |
-|Script		   : Criacao da Package Body.					 						   |										                   
+|                arquivo a partir da Tabela de Transacoes.			       |
+|		 Geracao de um arquivo com as Transacoes de acordo com a data informada|  
+|                como   parametro na execucao da aplicacao;	                       |
+|Script		   : Criacao da Package Body.					       |										                   
 ***************************************************************************************|
 */
 CREATE OR REPLACE PACKAGE BODY PKG_GERA_RELATORIO IS
@@ -37,7 +37,7 @@ BEGIN
     EXIT
   WHEN c1%notfound;
     utl_file.put_line(meu_arquivo,
-									'NUMERO DO CARTAO  ' || ' : ' || r1.NM_CARTAO ||
+									'NUMERO DO CARTAO  ' || ' : ' || r1.NM_CARTAO || ' : ' ||
 									'VALOR DA TRANSACAO  ' || LPAD(r1.VALOR_TRANSACAO, 11, '0') || ' : ' ||
 									'DATA DE NASCIMENTO  ' || TO_CHAR(r1.DATA_NASCIMENTO,'DDMMYYYY'));
   END LOOP;
