@@ -1,0 +1,41 @@
+> select instance_name, host_name from V$INSTANCE d
+INSTANCE_NAME    HOST_NAME                                                      
+---------------- ----------------------------------------------------------------
+xe               USER-PC                                                          
+
+> @'C:\Conductor\Script_Create_Table_T_Transacoes.sql'
+> /*
+***************************************************************************************|																				 	
+|Analista      : Mauricio A. Del Rei												   |
+|Data          : 14/07/2018															   |
+|Versão		   : 1.0.0																   |
+|Objetivo      : Desenvolver uma aplicacao que acesse o banco de dados e gere um       | 
+|                arquivo a partir da Tabela de Transacoes.							   |
+|				 Geracao de um arquivo com as Transacoes de acordo com a data informada|  
+|                como   parametro na execucao da aplicacao;	                           |
+|Script		   : Criacao da Tabela de Transacoes.					 													   |										                   
+***************************************************************************************|
+*/
+> CREATE TABLE T_TRANSACOES
+(
+	idTransacao 	    INTEGER		Primary Key,	
+	nm_cartao 			NUMBER  			   ,
+	valor_transacao 	NUMBER(9,2)            ,
+	data_transacao      Date                   ,
+	data_nascimento		Date
+)
+table T_TRANSACOES criado.
+> COMMENT ON TABLE T_TRANSACOES IS 'Tabela de Transacoes para Geracao de Arquivos'
+COMMENT on table t_transacoes 'TABELA DE TRANSACOES PARA GERACAO DE ARQUIVOS' bem-sucedido.
+> COMMENT ON COLUMN T_TRANSACOES.idTransacao     IS 'Identificador da Tabela de Transacao'
+COMMENT on column t_transacoes.idtransacao 'IDENTIFICADOR DA TABELA DE TRANSACAO' bem-sucedido.
+> COMMENT ON COLUMN T_TRANSACOES.nm_cartao       IS 'Número do Cartao do Cliente'
+COMMENT on column t_transacoes.nm_cartao 'NúMERO DO CARTAO DO CLIENTE' bem-sucedido.
+> COMMENT ON COLUMN T_TRANSACOES.valor_transacao IS 'Valor de Cada Transacao Realizada'
+COMMENT on column t_transacoes.valor_transacao 'VALOR DE CADA TRANSACAO REALIZADA' bem-sucedido.
+> COMMENT ON COLUMN T_TRANSACOES.data_transacao  IS 'Data da Transacao'
+COMMENT on column t_transacoes.data_transacao 'DATA DA TRANSACAO' bem-sucedido.
+> COMMENT ON COLUMN T_TRANSACOES.data_nascimento IS 'Data de Nascimento do Cliente'
+COMMENT on column t_transacoes.data_nascimento 'DATA DE NASCIMENTO DO CLIENTE' bem-sucedido.
+> /
+> SPOOL OFF 
