@@ -5,7 +5,7 @@
 |Versão		   : 1.0.0							       |
 |Objetivo      : Desenvolver uma aplicacao que acesse o banco de dados e gere um       | 
 |                arquivo a partir da Tabela de Transacoes.			       |
-|		 Geracao de um arquivo com as Transacoes de acordo com a data informada|  
+|		Geracao de um arquivo com as Transacoes de acordo com a data informada |  
 |                como   parametro na execucao da aplicacao;	                       |
 |Script		   : Criacao da Package Body.					       |										                   
 ***************************************************************************************|
@@ -55,4 +55,7 @@ EXCEPTION
 		utl_file.fclose(meu_arquivo);
 		dbms_output.put_line ('Modo de abertura inválido');
 END;
+END PKG_GERA_RELATORIO; 
 /
+
+
